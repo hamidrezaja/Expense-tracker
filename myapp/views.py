@@ -19,3 +19,8 @@ def edit(request,id):
             form.save()
             return redirect('index')
     return render(request,'myapp/edit.html',{"expense_form":expense_form})
+def delete(request,id):
+    expense=Expense.objects.get(id=id)
+    expense.delete()
+    return redirect('index')
+    
