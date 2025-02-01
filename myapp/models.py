@@ -6,4 +6,5 @@ class Expense(models.Model):
     amount=models.IntegerField()
     category=models.CharField(max_length=50)
     date=models.DateField(auto_now=True)
-    
+    def __str__(self):
+        return f"{self.name} and amount is {self.amount} for {self.category}"
